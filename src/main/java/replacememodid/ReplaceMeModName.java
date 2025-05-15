@@ -12,7 +12,7 @@ import replacememodid.proxy.CommonProxy;
 import twelvefold.twelvefoldbooter.api.LateMixinLoader;
 
 @Mod(modid = ReplaceMeModName.MODID, version = ReplaceMeModName.VERSION, name = ReplaceMeModName.NAME, dependencies = "required-after:twelvefoldbooter")
-//@LateMixinLoader(value = "mixins.replacememodid.jei.json",shouldMixinConfigQueue = "shouldMixinConfigQueue")
+@LateMixinLoader(value = "mixins.replacememodid.jei.json",shouldMixinConfigQueue = "shouldMixinConfigQueue")
 public class ReplaceMeModName {
     public static final String MODID = "replacememodid";
     public static final String VERSION = "ReplaceMe.Mod.Version";

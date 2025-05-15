@@ -1,10 +1,10 @@
 package replacememodid;
 
-import java.util.Map;
-import fermiumbooter.FermiumRegistryAPI;
-import net.minecraftforge.fml.common.Loader;
-import org.spongepowered.asm.launch.MixinBootstrap;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
+import org.spongepowered.asm.launch.MixinBootstrap;
+import twelvefold.twelvefoldbooter.api.TwelvefoldRegistryAPI;
+
+import java.util.Map;
 
 @IFMLLoadingPlugin.MCVersion("1.12.2")
 public class ReplaceMeModNamePlugin implements IFMLLoadingPlugin {
@@ -12,8 +12,8 @@ public class ReplaceMeModNamePlugin implements IFMLLoadingPlugin {
 	public ReplaceMeModNamePlugin() {
 		MixinBootstrap.init();
 		//False for Vanilla/Coremod mixins, true for regular mod mixins
-		FermiumRegistryAPI.enqueueMixin(false, "mixins.replacememodid.vanilla.json");
-		FermiumRegistryAPI.enqueueMixin(true, "mixins.replacememodid.jei.json", () -> Loader.isModLoaded("jei"));
+		TwelvefoldRegistryAPI.enqueueEarlyMixin("mixins.replacememodid.vanilla.json");
+		//FermiumRegistryAPI.enqueueMixin(true, "mixins.replacememodid.jei.json", () -> Loader.isModLoaded("jei"));
 	}
 
 	@Override

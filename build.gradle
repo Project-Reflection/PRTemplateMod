@@ -43,9 +43,15 @@ repositories {
     }
     maven {
         url = 'https://api.modrinth.com/maven'
+        content{
+            includeGroup 'maven.modrinth'
+        }
     }
     maven {
         url = 'https://www.cursemaven.com'
+        content{
+            includeGroup 'curse.maven'
+        }
     }
 }
 
@@ -60,7 +66,7 @@ dependencies {
     implementation "io.github.llamalad7:mixinextras-common:${mixin_extras_version}"
     annotationProcessor "io.github.llamalad7:mixinextras-common:${mixin_extras_version}"
 
-    implementation rfg.deobf("maven.modrinth:twelvefold-booter:${twelvefold_booter_version}")
+    implementation rfg.deobf("curse.maven:alternate-mixin-utilities-1328540:${twelvefold_booter_version}")
 	
     implementation rfg.deobf("maven.modrinth:jei:${jei_version}")
 }
